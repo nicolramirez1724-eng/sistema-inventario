@@ -1,0 +1,43 @@
+
+Producto: ghjg
+Norte: 2
+Total: 2
+
+Producto: tf
+Total: 0
+
+Producto: jubjyh
+Total: 0
+
+Producto: ghjg
+Norte: 2
+Total: 2
+
+Producto: tf
+Total: 0
+
+Producto: jubjyh
+Total: 0
+
+Producto: ghjg
+Norte: 2
+Total: 2
+
+Producto: tf
+Total: 0
+
+Producto: jubjyh
+Total: 0
+
+Producto: ghjg
+Norte: 2
+Total: 2
+
+Producto: tf
+Total: 0
+
+Producto: jubjyh
+Total: 0
+
+Producto: 
+Total: 0

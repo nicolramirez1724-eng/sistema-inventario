@@ -1,0 +1,48 @@
+[
+    {
+        "codigo": "556",
+        "nombre": "ghjg",
+        "proveedor": "drdu",
+        "stock": {
+            "Norte": 2
+        },
+        "movimientos": [
+            {
+                "tipo": "entrada",
+                "bodega": "Norte",
+                "cantidad": 2,
+                "descripcion": "futdut",
+                "fecha": "2026-04-08 14:50:29.611637"
+            },
+            {
+                "tipo": "entrada",
+                "bodega": "Norte",
+                "cantidad": 3,
+                "descripcion": "hndb",
+                "fecha": "2026-04-08 14:54:21.592881"
+            },
+            {
+                "tipo": "salida",
+                "bodega": "Norte",
+                "cantidad": 3,
+                "descripcion": "fdgbd",
+                "fecha": "2026-04-08 14:54:59.704241"
+            }
+        ]
+    },
+    {
+        "codigo": "222",
+        "nombre": "tf",
+        "proveedor": "ttd"
+    },
+    {
+        "codigo": "222",
+        "nombre": "jubjyh",
+        "proveedor": "tfuf"
+    },
+    {
+        "codigo": "yytdc",
+        "nombre": "",
+        "proveedor": "122"
+    }
+]
