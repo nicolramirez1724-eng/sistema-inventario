@@ -4,7 +4,7 @@
         "nombre": "ghjg",
         "proveedor": "drdu",
         "stock": {
-            "Norte": 1,
+            "Norte": 15,
             "Oriente": 1
         },
         "movimientos": [
@@ -44,6 +44,13 @@
                 "descripcion": "gtffv",
                 "fecha": "2026-04-15 20:18:29.493970",
                 "id_transferencia": "71ade9bc-a98d-4660-a620-fdb792611fad"
+            },
+            {
+                "tipo": "entrada",
+                "bodega": "Norte",
+                "cantidad": 14,
+                "descripcion": "sfgdfgd",
+                "fecha": "2026-04-16 19:44:42.557410"
             }
         ]
     },

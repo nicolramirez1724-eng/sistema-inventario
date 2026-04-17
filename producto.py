@@ -1,8 +1,9 @@
 import json
 from datetime import datetime
 import uuid
+import config
 
-RUTA = "data/producto.json"
+RUTA = config.ruta_absoluta/"data/producto.json"
 BODEGAS_VALIDAS = ["Norte", "Centro", "Oriente"]
 
 
@@ -25,10 +26,10 @@ def agregar_roducto():
             proveedor=proveedor
         )
         list = []
-        with open("data/producto.json", "r") as f:
+        with open(RUTA, "r") as f:
             list = json.load(f)
         list.append(producto)
-        with open("data/producto.json", "w") as f:
+        with open(RUTA, "w") as f:
             json.dump(list, f, indent=4)
     except:
         print("no se puede agregar producto")
@@ -41,7 +42,7 @@ def ingresar_producto():
         cantidad = int(input("Cantidad a ingresar: "))
         descripcion = input("Descripción: ")
 
-        with open("data/producto.json", "r") as f:
+        with open(RUTA, "r") as f:
             productos = json.load(f)
 
             encontrado = False
@@ -75,7 +76,7 @@ def ingresar_producto():
                 print("Producto no encontrado")
                 return
 
-            with open("data/producto.json", "w") as f:
+            with open(RUTA, "w") as f:
                 json.dump(productos, f, indent=4)
 
             print("Producto ingresado correctamente")
@@ -91,7 +92,7 @@ def retirar_producto():
         cantidad = int(input("Cantidad a retirar: "))
         descripcion = input("Descripción: ")
 
-        with open("data/producto.json", "r") as f:
+        with open(RUTA, "r") as f:
             productos = json.load(f)
 
         for p in productos:
@@ -112,7 +113,7 @@ def retirar_producto():
                             "fecha": str(datetime.now())
                         })
 
-                        with open("data/producto.json", "w") as f:
+                        with open(RUTA, "w") as f:
                             json.dump(productos, f, indent=4)
 
                         print("Retiro exitoso")
@@ -133,7 +134,7 @@ def transferir_producto():
         origen = input("Bodega origen: ")
         destino = input("Bodega destino: ")
 
-        with open("data/producto.json", "r") as f:
+        with open(RUTA, "r") as f:
             productos = json.load(f)
 
         if origen not in BODEGAS_VALIDAS or destino not in BODEGAS_VALIDAS:
@@ -156,16 +157,16 @@ def transferir_producto():
                     print("Stock insuficiente en origen")
                     return
 
-                # ID único de transferencia
+
                 id_transferencia = str(uuid.uuid4())
 
-                # RESTAR en origen
+
                 p["stock"][origen] -= cantidad
 
-                # SUMAR en destino
+
                 p["stock"][destino] = p["stock"].get(destino, 0) + cantidad
 
-                # REGISTRAR movimientos
+
                 p["movimientos"].append({
                     "tipo": "salida",
                     "bodega": origen,
@@ -183,7 +184,7 @@ def transferir_producto():
                     "fecha": str(datetime.now()),
                     "id_transferencia": id_transferencia
                 })
-                with open("data/producto.json", "w") as f:
+                with open(RUTA, "w") as f:
                     json.dump(productos, f, indent=4)
 
                 print("Transferencia realizada correctamente")
@@ -197,7 +198,7 @@ def transferir_producto():
 def buscar_producto():
     codigo = input("Código del producto: ")
 
-    with open("data/producto.json", "r") as f:
+    with open(RUTA, "r") as f:
         productos = json.load(f)
 
     for p in productos:

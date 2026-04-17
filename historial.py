@@ -1,8 +1,10 @@
 import json
+import config
+RUTA = config.ruta_absoluta/"data/producto.json"
 def historial_producto():
     codigo = input("Código del producto: ")
 
-    with open("data/producto.json", "r") as f:
+    with open(RUTA, "r") as f:
         productos = json.load(f)
 
     for p in productos:
@@ -15,7 +17,7 @@ def historial_producto():
     print("Producto no encontrado")
 
 def reporte():
-    with open("data/producto.json", "r") as f:
+    with open(RUTA, "r") as f:
         productos = json.load(f)
 
     texto_reporte = ""
@@ -42,7 +44,7 @@ def reporte():
 
     if opcion == "s":
         try:
-            with open("reporte.txt", "a") as f:
+            with open(config.ruta_absoluta/"reporte.txt", "a") as f:
                 f.write(texto_reporte)
             print("Reporte guardado en reporte.txt")
         except:
